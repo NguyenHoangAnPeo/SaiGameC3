@@ -7,26 +7,27 @@ public abstract class Spawner : AnMonoBehaviour
     [Header("Spawner")]
     [SerializeField] protected int spawnedCount = 0;
     public int SpawnedCount => spawnedCount;
-    [SerializeField] protected List <Transform> prefabs; // Khởi tạo danh sách
+    [SerializeField] protected List<Transform> prefabs; // Khởi tạo danh sách
     // Hàm dùng để tải các thành phần
     [SerializeField] protected Transform holder;
-    [SerializeField] protected List <Transform> poolObjs;
+    [SerializeField] protected List<Transform> poolObjs;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadPrefabs();
         this.LoadHolder();
     }
-    protected virtual void LoadHolder(){
-        if(this.holder != null)return;
+    protected virtual void LoadHolder()
+    {
+        if (this.holder != null) return;
         this.holder = transform.Find("Holder");
-        Debug.Log(transform.name+ ": LoadHolder", gameObject);
+        Debug.Log(transform.name + ": LoadHolder", gameObject);
     }
 
     // Hàm tải danh sách Prefabs
     protected virtual void LoadPrefabs()
     {
-        if(this.prefabs.Count > 0) return;
+        if (this.prefabs.Count > 0) return;
         Transform prefabObj = transform.Find("Prefabs"); // Tìm đối tượng con có tên "Prefabs"
         if (prefabObj == null) // Kiểm tra null
         {
@@ -62,21 +63,24 @@ public abstract class Spawner : AnMonoBehaviour
     public virtual Transform Spawn(string prefabName, Vector3 spawnPos, Quaternion rotation)
     {
         Transform prefab = this.GetPrefabByName(prefabName);
-        if (prefab == null){
+        if (prefab == null)
+        {
             Debug.LogWarning("Can not get prefab" + prefabName);
             return null;
         }
 
-       Transform newPrefab = this.GetObjectFromPool(prefab);
-       newPrefab.SetPositionAndRotation(spawnPos, rotation);
-       newPrefab.parent = this.holder;
-       this.spawnedCount++;
+        Transform newPrefab = this.GetObjectFromPool(prefab);
+        newPrefab.SetPositionAndRotation(spawnPos, rotation);
+        newPrefab.parent = this.holder;
+        this.spawnedCount++;
         return newPrefab;
     }
-    protected virtual Transform GetObjectFromPool(Transform prefab){
-        foreach(Transform poolObj in this.poolObjs)
+    protected virtual Transform GetObjectFromPool(Transform prefab)
+    {
+        foreach (Transform poolObj in this.poolObjs)
         {
-            if(poolObj.name == prefab.name){
+            if (poolObj.name == prefab.name)
+            {
                 this.poolObjs.Remove(poolObj);
                 return poolObj;
             }
@@ -85,13 +89,16 @@ public abstract class Spawner : AnMonoBehaviour
         newPrefab.name = prefab.name;
         return newPrefab;
     }
-        public virtual void Despawn(Transform obj){
-            this.poolObjs.Add(obj);
-            obj.gameObject.SetActive(false);
-        }
-         public virtual Transform GetPrefabByName(string prefabName){
-        foreach(Transform prefab in this.prefabs){
-            if(prefab.name == prefabName) return prefab;
+    public virtual void Despawn(Transform obj)
+    {
+        this.poolObjs.Add(obj);
+        obj.gameObject.SetActive(false);
+    }
+    public virtual Transform GetPrefabByName(string prefabName)
+    {
+        foreach (Transform prefab in this.prefabs)
+        {
+            if (prefab.name == prefabName) return prefab;
         }
         return null;
     }

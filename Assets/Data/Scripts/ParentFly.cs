@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ParentFly: AnMonoBehaviour
+public class ParentFly : AnMonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 1f;
     [SerializeField] protected Vector3 direction = Vector3.right;
-    void Update(){
+    void Update()
+    {
         transform.parent.Translate(this.direction * this.moveSpeed * Time.deltaTime);//this.direction: la mot vector 3, this.speed: toc do di chuyen, tim.deltatime: di chuyen tgian thuc, k bi han che boi frame;
     }
-    protected virtual void OnEnable(){
+    protected override void OnEnable()
+    {
         //for override;
     }
 }

@@ -19,8 +19,8 @@ public class GameCtrl : AnMonoBehaviour
         this.LoadCamera();
     }
     protected virtual void LoadCamera(){
-        if(this.mainCamera != null)return;
-        this.mainCamera = GameCtrl.FindObjectOfType<Camera>();
-        Debug.Log(transform.name + "LoadCamera",gameObject);
+    if(this.mainCamera != null) return;
+    this.mainCamera = GameObject.FindObjectOfType<Camera>();
+    Debug.Log(transform.name + " LoadCamera", gameObject);
     }
 }
