@@ -68,7 +68,10 @@ public abstract class Spawner : AnMonoBehaviour
             Debug.LogWarning("Can not get prefab" + prefabName);
             return null;
         }
-
+        return this.Spawn(prefab, spawnPos, rotation);
+    }
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
         newPrefab.parent = this.holder;
@@ -101,5 +104,10 @@ public abstract class Spawner : AnMonoBehaviour
             if (prefab.name == prefabName) return prefab;
         }
         return null;
+    }
+    public virtual Transform RandomPrefab()
+    {
+        int rand = Random.Range(0, this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }
