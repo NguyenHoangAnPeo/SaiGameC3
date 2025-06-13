@@ -294,8 +294,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 239525262}
-  - component: {fileID: 239525264}
   - component: {fileID: 239525263}
+  - component: {fileID: 239525264}
   m_Layer: 0
   m_Name: DamageReceiver
   m_TagString: Untagged
@@ -337,7 +337,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.32
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &239525264
 MonoBehaviour:
@@ -348,13 +348,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 239525261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3ae877beeb12749bb3ee6ec689daca, type: 3}
+  m_Script: {fileID: 11500000, guid: 786b6a22756e5354583e06b79eb05d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereCollider: {fileID: 0}
+  sphereCollider: {fileID: 239525263}
   hp: 1
   hpMax: 2
   isDead: 0
+  junkCtrl: {fileID: 2117174689}
 --- !u!1 &316107563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,8 +1174,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746181088}
-  - component: {fileID: 746181090}
   - component: {fileID: 746181089}
+  - component: {fileID: 746181090}
   m_Layer: 0
   m_Name: DamageReceiver
   m_TagString: Untagged
@@ -1216,7 +1217,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.32
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &746181090
 MonoBehaviour:
@@ -1227,13 +1228,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 746181087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf3ae877beeb12749bb3ee6ec689daca, type: 3}
+  m_Script: {fileID: 11500000, guid: 786b6a22756e5354583e06b79eb05d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereCollider: {fileID: 0}
+  sphereCollider: {fileID: 746181089}
   hp: 1
   hpMax: 2
   isDead: 0
+  junkCtrl: {fileID: 1392953656}
 --- !u!1 &827760779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junkDespawn: {fileID: 416400609}
   model: {fileID: 1096160172}
+  junkSO: {fileID: 11400000, guid: 4f353a1d150195b4ea4090b0b943aedc, type: 2}
 --- !u!1 &1543007151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,6 +2246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junkDespawn: {fileID: 2000813471}
   model: {fileID: 2053578913}
+  junkSO: {fileID: 11400000, guid: 722cc6cd6d5b9cd4c98c94784802de36, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

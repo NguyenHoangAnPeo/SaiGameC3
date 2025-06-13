@@ -29,6 +29,7 @@ public class DamageReceiver : AnMonoBehaviour
         this.isDead = false;
     }
     public virtual void Add(int add){
+        if (this.isDead) return;
         this.hp += add;
         if(this.hp > hpMax)this.hp = this.hpMax;
     }
