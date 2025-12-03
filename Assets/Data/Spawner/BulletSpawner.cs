@@ -7,6 +7,7 @@ public class BulletSpawner : Spawner
    [SerializeField] protected static BulletSpawner instance;
    [SerializeField] public static BulletSpawner Instance{get => instance;}
    public static string bulletOne = "Bullet_1";
+    public static string laserOne = "Laser_1";
     protected override void Awake()
     {
         base.Awake();

@@ -6,8 +6,8 @@ public class BulletCtrl : AnMonoBehaviour
 {
     [SerializeField] protected DamageSender damageSender;
     public DamageSender DamageSender { get => damageSender; }
-    [SerializeField] protected BulletDespawn bulletDespawn;
-    [SerializeField] public BulletDespawn BulletDespawn { get => bulletDespawn; }
+    [SerializeField] protected Despawn despawn;
+    [SerializeField] public Despawn Despawn { get => despawn; }
     [SerializeField] protected Transform shooter;
     public Transform Shooter => shooter;
     protected override void LoadComponents()
@@ -23,8 +23,8 @@ public class BulletCtrl : AnMonoBehaviour
     }
     protected virtual void LoadBulletDespawn()
     {
-        if (this.bulletDespawn != null) return;
-        this.bulletDespawn = GetComponentInChildren<BulletDespawn>();
+        if (this.despawn != null) return;
+        this.despawn = GetComponentInChildren<Despawn>();
         Debug.Log(transform.name + ": LoadBulletDespawn", gameObject);
     }
     public virtual void SetShooter(Transform shooter)

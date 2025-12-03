@@ -5,7 +5,7 @@ using UnityEngine;
 public class AbilityWarpFromInput : AbilityWarp
 {
     //[Header("Warp")]
-    
+
     protected override void Update()
     {
         base.Update();

@@ -19,9 +19,17 @@ public class PlayerCtrl : AnMonoBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (PlayerCtrl.instance != null) Debug.LogError("Only 1 PlayerCtrl allow to exist");
+
+        if (PlayerCtrl.instance != null && PlayerCtrl.instance != this)
+        {
+            Debug.LogError("Only 1 PlayerCtrl allowed to exist");
+            Destroy(this.gameObject);
+            return;
+        }
+
         PlayerCtrl.instance = this;
     }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

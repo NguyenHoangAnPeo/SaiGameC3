@@ -7,10 +7,19 @@ public class Abilities : AnMonoBehaviour
     [Header("Abilities")]
     [SerializeField] protected AbilityObjectCtrl abilityObjectCtrl;
     public AbilityObjectCtrl AbilityObjectCtrl => abilityObjectCtrl;
-     protected override void LoadComponents()
+
+    [SerializeField] protected AbilityLaserFromInput abilityLaser;
+    public AbilityLaserFromInput AbilityLaserFromInput => abilityLaser;
+    protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadAbilityObjCtrl();
+        this.LoadAbilityLaser();
+    }
+    protected virtual void LoadAbilityLaser()
+    {
+        if (this.abilityLaser != null) return;
+        this.abilityLaser = transform.GetComponentInChildren<AbilityLaserFromInput>();
     }
     protected virtual void LoadAbilityObjCtrl()
     {

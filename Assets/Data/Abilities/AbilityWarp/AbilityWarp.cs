@@ -10,7 +10,7 @@ public class AbilityWarp : BaseAbility
     protected Vector4 keyDirection;
     [SerializeField] protected Vector4 warpDiretion;
     [SerializeField] protected float warpSpeed = 0.5f;
-    [SerializeField] protected float warpDistance = 2f;
+    [SerializeField] protected float warpDistance = 5f;
     protected override void Update()
     {
         base.Update();

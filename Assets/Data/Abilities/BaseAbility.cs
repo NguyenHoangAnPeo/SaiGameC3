@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public abstract class BaseAbility : AnMonoBehaviour
@@ -8,7 +9,9 @@ public abstract class BaseAbility : AnMonoBehaviour
     [SerializeField] protected Abilities abilities;
     public Abilities Abilities => abilities;
     [SerializeField] protected float timer = 2f;
+    public float TimerCooldown => timer;
     [SerializeField] protected float delay = 2f;
+    public float TimerDelay => delay;
     [SerializeField] protected bool isReady = false;
     protected override void LoadComponents()
     {
