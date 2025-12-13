@@ -7,6 +7,7 @@ public class HPBarSpawner : Spawner
     [SerializeField] protected static HPBarSpawner instance;
     [SerializeField] public static HPBarSpawner Instance => instance;
     public static string HPBar = "HPBar";
+    public static string HPBarMotherShip = "HPBarMotherShip";
     protected override void Awake()
     {
         base.Awake();

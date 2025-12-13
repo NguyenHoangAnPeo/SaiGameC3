@@ -21,7 +21,7 @@ public class SliderHP : BaseSlider
     }
     protected override void OnChanged(float newValue)
     {
-        
+
     }
     public virtual void SetMaxHP(float maxHP)
     {

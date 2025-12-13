@@ -7,6 +7,7 @@ public class ItemProFileSO : ScriptableObject
 {
     public ItemCode itemCode = ItemCode.NoItem;
     public ItemType itemType = ItemType.NoType;
+    public EquipmentStats equipmentStats;
     public string itemName = "no-name";
     public Sprite itemSprite;
     public int defaultMaxStack = 7;

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCode: 3
   itemType: 2
+  equipmentStats:
+    bonusHP: 5
+    bonusATK: 1
+    bonusDEF: 0
+    bonusSpeed: 1
   itemName: CopperSword
   itemSprite: {fileID: 21300000, guid: 7fd28709d73d26a44b06e4916520a0a6, type: 3}
   defaultMaxStack: 1
-  upgradeLevels:
-  - ingredients:
-    - itemProfile: {fileID: 11400000, guid: 858de648542d88e4ab25cb5965f6c0a3, type: 2}
-      itemCount: 2
-    - itemProfile: {fileID: 11400000, guid: 768b66df9802bfa46972b2abbfa6a352, type: 2}
-      itemCount: 2
+  upgradeLevels: []
